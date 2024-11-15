@@ -20,10 +20,8 @@ public class Car extends Thread {
         try {
             sleep(arrival_time * 1000);
             long time = currentTimeMillis();
-            System.out.println(this.getName() + " from " + gateName + " arrived at time " + arrival_time);
-            if (!parkingLot.tryEnter(this, time,false)) {
-                System.out.println(this.getName() + " from " + gateName + " waiting for a spot.");
-                while (!parkingLot.tryEnter(this, time,true)) {
+            if (!parkingLot.TryEnter(this, time,true)) {
+                while (!parkingLot.TryEnter(this, time,false)) {
                 }
             }
             sleep(parking_time * 1000);
