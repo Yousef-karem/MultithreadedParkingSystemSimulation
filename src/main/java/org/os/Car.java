@@ -22,6 +22,7 @@ public class Car extends Thread {
             long time = currentTimeMillis();
             if (!parkingLot.TryEnter(this, time,true)) {
                 while (!parkingLot.TryEnter(this, time,false)) {
+
                 }
             }
             sleep(parking_time * 1000);

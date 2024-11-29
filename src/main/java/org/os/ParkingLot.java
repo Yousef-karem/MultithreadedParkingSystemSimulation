@@ -5,11 +5,11 @@ import java.util.concurrent.Semaphore;
 import static java.lang.System.currentTimeMillis;
 
 public class ParkingLot {
-    private Semaphore sem;
+    private semaPhore sem;
     private int numberOfCars;
 
     ParkingLot(int slot) {
-        sem = new Semaphore(slot);
+        sem = new semaPhore(slot);
         numberOfCars = 0;
     }
 
